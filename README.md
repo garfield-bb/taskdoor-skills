@@ -27,7 +27,10 @@ For a private or sandbox deployment, add `--server <origin>` to `taskdoor login`
   already connected TaskDoor MCP. Requires that MCP connection; does not require the CLI.
 
 The creation skill includes task goals, completion criteria, due dates, execution tips and effort
-estimates. It preserves explicit user choices and reports partial failures with the real task IDs.
+estimates. It asks at most three multiple-choice questions when a key detail is missing, points out
+existing tasks that look like duplicates or could be the parent, and writes user-facing text in the
+requested language (Chinese or English). It preserves explicit user choices and reports partial
+failures with the real task IDs.
 It contains no credentials, fixed workspace or team, offline proposal protocol, or evaluation fixtures.
 
 ## Adding skills
