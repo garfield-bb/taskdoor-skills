@@ -34,9 +34,13 @@ minutes for the person and then exits by itself.
   as printed, each in a code block of its own; the person opens the address on any device and enters the code.
 
 Do not change the address, and do not run login again if it fails or times out: report what it printed.
-`KEYRING_UNAVAILABLE` means this computer's keyring cannot keep the login (no desktop session, a sandbox with
-its own home directory, or access refused): tell the person, then run the same login once more with
-`--credential-store file` added. Where you already know there is no keyring, add it from the start.
+Where this computer's keyring cannot keep the login (no desktop session, your own sandbox, access refused), login
+saves it to a protected file instead and says so: pass the notice on to the person; nothing else is needed. If login
+itself still stops with `KEYRING_UNAVAILABLE` (an older taskdoor, or the keyring was chosen), tell the person, then run
+the same login once more with `--credential-store file` added.
+When another command stops with `KEYRING_UNAVAILABLE`, the person is signed in but the login is in a keyring you cannot
+reach: do not log in again. Ask the person to run `taskdoor auth store file` once in their own terminal (outside the
+agent), then retry.
 `LOCK_FAILED` or another permission error on the configuration directory almost always means your own sandbox
 may not write there: do not retry the login; ask the person to allow it or to run it outside the sandbox (or set
 `TASKDOOR_CONFIG_DIR` to a directory you can write).
