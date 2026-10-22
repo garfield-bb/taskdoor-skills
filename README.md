@@ -18,20 +18,26 @@ For a private or sandbox deployment, add `--server <origin>` to `taskdoor login`
 ## Skills
 
 - [`taskdoor`](skills/taskdoor/SKILL.md): set up the CLI, find commands with `taskdoor --help`, read exit
-  codes, and act safely on shared tasks.
-- [`taskdoor-mcp`](skills/taskdoor-mcp/SKILL.md): configure remote TaskDoor MCP in an AI client, signing
-  in through the browser where the client supports MCP authorization or with a personal access token
-  otherwise, preserve existing servers, and verify the connection without requiring the CLI.
+  codes, and follow up on unresolved discussion items with lightweight subtasks when appropriate.
+- [`taskdoor-mcp`](skills/taskdoor-mcp/SKILL.md): connect and use remote TaskDoor MCP, sign in through
+  supported browser authorization or an access token, and follow up on discussion items without
+  requiring the CLI. Preserve existing servers and verify the connection with a read-only operation.
 - [`taskdoor-create-task`](skills/taskdoor-create-task/SKILL.md): turn a user's request into tasks and
-  subtasks, assign owners from confirmed team responsibilities, and create and verify them through an
-  already connected TaskDoor MCP. Requires that MCP connection; does not require the CLI.
+  subtasks as an editable planning proposal, recommending owners from the supplied team context. It
+  outputs a proposal only; the application handles confirmation and creation.
 
 The creation skill includes task goals, completion criteria, due dates, execution tips and effort
 estimates. It asks at most three multiple-choice questions when a key detail is missing, points out
 existing tasks that look like duplicates or could be the parent, and writes user-facing text in the
-requested language (Chinese or English). It preserves explicit user choices and reports partial
-failures with the real task IDs.
-It contains no credentials, fixed workspace or team, offline proposal protocol, or evaluation fixtures.
+requested language (Chinese or English). It preserves explicit user choices and never returns a
+fabricated creation receipt. It contains no credentials, fixed workspace or team, or evaluation fixtures.
+
+The CLI and MCP skills both teach the agent to notice concrete work that deserves follow-up during
+ordinary reading, discussion and file handling. They check existing tasks and the latest discussion,
+suggest a title and an evidenced owner, and create only when authorized. A small follow-up needs no
+mandatory goal, criteria, date, estimate or planning flow. Existing work, resolved questions and ignored
+suggestions do not prompt repeated creation; connecting a client does not start background monitoring
+or synchronize page suggestions.
 
 ## Adding skills
 

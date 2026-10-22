@@ -8,10 +8,49 @@ description: Use when setting up or using the TaskDoor CLI to read, create, upda
 TaskDoor is reached through the `taskdoor` command-line tool. This skill says how to set it up, how to find
 the right command and how to act safely. The commands themselves are described by `taskdoor --help`.
 
-When `taskdoor-create-task` is installed, use it to generate editable task proposals with decomposition
-and responsibility matching. The application provides the current member directory and context; the
-proposal skill does not require installing or signing in to the CLI and does not create tasks. The
-application executes the final edited proposal only after the user confirms it.
+Use `taskdoor-create-task` for an editable planning proposal when that is what the person needs. It
+outputs a proposal for the application; it does not create tasks. A concrete follow-up from an existing
+task's discussion can use the CLI directly, without that planning flow.
+
+## Follow up during everyday collaboration
+
+Subtasks can track questions, fixes and requests discovered while a task is underway, as well as work
+planned in advance. When reading a task, summarizing or replying to its discussion, or handling its
+files, complete the person's request and notice concrete, unresolved work that needs continued
+ownership or a separately checkable result. The person need not say "decompose this task" first.
+
+- Suggest a subtask under the current task when there is work worth following up. Keep one matter
+  together; split only independently owned work or outcomes. Do not ask the person to choose between
+  Issue, task and subtask. Ordinary conversation, progress reports, resolved matters and questions you
+  can answer in the current reply do not need another task.
+- Before proposing it, check the relevant latest discussion and existing tasks, including completed
+  or cancelled ones. Compare the actual scope and source context, not titles alone. If a task already
+  covers it, do not suggest another; completion or cancellation alone does not justify recreating it.
+  Partial coverage warrants only the uncovered work. If reads are incomplete or fail, say coverage is
+  unknown rather than claiming no task exists. Do not scan unrelated workspaces.
+- Offer a short, specific title and an owner named in context or recommended from relevant member
+  responsibilities; membership alone is not assignment evidence. Unknown ownership stays unassigned.
+  Goals, completion criteria, dates and effort are optional for a small follow-up. Do not require a
+  complete brief or planning proposal before recording the issue.
+- Reading, replying or uploading does not authorize an extra task. Propose it in your response first;
+  create after agreement. If the person already explicitly asked for that subtask, act within that
+  request without asking again. An ignored suggestion stays quiet unless relevant facts change.
+- Just before creating, recheck the relevant discussion and tasks. New replies may resolve, withdraw
+  or merge the proposed work, or another person or agent may have created it. Reconcile those facts
+  with the request instead of executing a stale suggestion; clarify only if intent is now unclear.
+- After creation succeeds, return the real task ID or link and its source context. Where supported,
+  preserve a useful source reference in the task, respecting the requested fields. Do not automatically
+  post back to the discussion or claim that page references or suggestions have synchronized. Those
+  need separately authorized actions or implemented support, not just CLI creation.
+
+For example, after a summary: "The export footnotes still need one consistent label, and no existing
+task covers it. Create ‘Standardize export footnotes’ under this task for the confirmed owner?"
+
+Discover `taskdoor task list`, `taskdoor task comment list` and `taskdoor task create` with `--help`.
+Read all relevant pages; use `--parent` for subtasks and the current workspace/profile explicitly.
+Resolve a named owner to a current workspace member ID. The CLI defaults the owner to the caller, so
+use `--owner none` when ownership is unknown. A failed or uncertain write is not a creation receipt:
+read back before retrying, and reuse the same idempotency key when retrying the same creation.
 
 ## Setup
 
