@@ -11,34 +11,38 @@ Neither setup nor task collaboration requires the TaskDoor CLI.
 
 ## Follow up during everyday collaboration
 
-Subtasks can track questions, fixes and requests discovered while a task is underway, as well as work
-planned in advance. When reading a task, summarizing or replying to its discussion, or handling its
-files, complete the person's request and notice concrete, unresolved work that needs continued
-ownership or a separately checkable result. The person need not say "decompose this task" first.
+When reading a task, summarizing or replying to discussion, or handling files, finish the person's
+request and notice concrete, unresolved matters that need continued ownership or a separately
+checkable result. A subtask can track such a question, fix or request under the current task; the
+person need not first say "decompose this task" or choose between Issue and task.
 
-- Suggest a subtask under the current task when there is work worth following up. Keep one matter
-  together; split only independently owned work or outcomes. Do not ask the person to choose between
-  Issue, task and subtask. Ordinary conversation, progress reports, resolved matters and questions you
-  can answer in the current reply do not need another task.
-- Before proposing it, check the relevant latest discussion and existing tasks, including completed
-  or cancelled ones. Compare the actual scope and source context, not titles alone. If a task already
-  covers it, do not suggest another; completion or cancellation alone does not justify recreating it.
-  Partial coverage warrants only the uncovered work. If reads are incomplete or fail, say coverage is
-  unknown rather than claiming no task exists. Do not scan unrelated workspaces.
-- Offer a short, specific title and an owner named in context or recommended from relevant member
-  responsibilities; membership alone is not assignment evidence. Unknown ownership stays unassigned.
-  Goals, completion criteria, dates and effort are optional for a small follow-up. Do not require a
-  complete brief or planning proposal before recording the issue.
-- Reading, replying or uploading does not authorize an extra task. Propose it in your response first;
-  create after agreement. If the person already explicitly asked for that subtask, act within that
-  request without asking again. An ignored suggestion stays quiet unless relevant facts change.
-- Just before creating, recheck the relevant discussion and tasks. New replies may resolve, withdraw
-  or merge the proposed work, or another person or agent may have created it. Reconcile those facts
-  with the request instead of executing a stale suggestion; clarify only if intent is now unclear.
-- After creation succeeds, return the real task ID or link and its source context. Where supported,
-  preserve a useful source reference in the task, respecting the requested fields. Do not automatically
-  post back to the discussion or claim that page references or suggestions have synchronized. Those
-  need separately authorized actions or implemented support, not just MCP creation.
+Use these rules directly; everyday follow-up does not require another skill:
+
+- Check the relevant latest discussion and existing tasks, including completed or cancelled work.
+  Compare actual scope and source context, not titles alone. Suggest only uncovered work; do not
+  recreate it merely because an earlier task is complete or cancelled. Incomplete or failed reads
+  mean coverage is unknown, not that no task exists.
+- Stay with the current task, its direct children for coverage, and necessary parent constraints.
+  Read another branch only when explicitly related. Relevant new discussion may add a matter without
+  invalidating unrelated suggestions. Do not scan the whole task tree.
+- Keep one matter together; split only independently owned work or outcomes. Ordinary conversation,
+  progress reports, resolved or withdrawn matters, and questions answered in the current reply need
+  no new task. Without new relevant facts, do not repeat an ignored suggestion.
+- Offer a short, specific title and an owner named in context or supported by relevant responsibilities;
+  resolve that person to a current workspace member ID. Unknown ownership stays unassigned. Goals,
+  completion criteria, dates and effort are optional; do not require a planning form for a small issue.
+- Reading, replying or uploading does not authorize an extra task. Briefly propose the specific
+  follow-up and wait for agreement. If the person already explicitly requested that creation, execute
+  within the request without asking again.
+- Before creating, recheck latest discussion, existing coverage, permissions and members. Do not act
+  on a stale suggestion if new replies resolved, withdrew or changed it. Return the real task ID or
+  link and source context after success; do not automatically post back to discussion or claim page
+  references or suggestions synchronized.
+
+If installed, `taskdoor-decompose-task` can help with detailed or structured decomposition. It only
+returns suggestions. Its absence is not a limitation on the everyday guidance above and needs no
+installation warning for a straightforward follow-up. The MCP connection itself does not subscribe
+to events or run background analysis; recheck relevant facts during the current interaction.
 
 For example, after a summary: "The export footnotes still need one consistent label, and no existing
 task covers it. Create ‘Standardize export footnotes’ under this task for the confirmed owner?"
