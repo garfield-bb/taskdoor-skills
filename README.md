@@ -25,6 +25,9 @@ For a private or sandbox deployment, add `--server <origin>` to `taskdoor login`
 - [`taskdoor-create-task`](skills/taskdoor-create-task/SKILL.md): turn a user's request into tasks and
   subtasks, assign owners from confirmed team responsibilities, and create and verify them through an
   already connected TaskDoor MCP. Requires that MCP connection; does not require the CLI.
+- [`taskdoor-discussion-subtask`](skills/taskdoor-discussion-subtask/SKILL.md): prepare one direct subtask
+  from a selected discussion or from a request submitted in the subtask list. The application provides
+  the parent task context and handles confirmation and saving.
 
 The creation skill includes task goals, completion criteria, due dates, execution tips and effort
 estimates. It asks at most three multiple-choice questions when a key detail is missing, points out
