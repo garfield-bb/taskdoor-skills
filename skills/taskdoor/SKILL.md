@@ -35,6 +35,12 @@ is stopped early never saves the approval.
   person says the browser cannot be used here): ask the person first, then use
   `taskdoor login --server <origin> --device-auth`. It prints an address and a short code: show both exactly
   as printed, each in a code block of its own; the person opens the address on any device and enters the code.
+- **When your commands are stopped before login is done** and you cannot run it in the background (taskdoor
+  0.15.0 or newer): log in in two steps. `taskdoor login --server <origin> --device-auth --no-wait` prints the
+  address and code and returns at once; show them as above. Then run `taskdoor login --resume --timeout <ms>`, with
+  `<ms>` below your command limit (for example `--timeout 90000`): it waits for the approval and saves the login.
+  When it ends with `LOGIN_PENDING`, the code still works: run `taskdoor login --resume` again, and never start a
+  new login for it. `LOGIN_BUSY` means another `--resume` is already waiting. An older taskdoor refuses `--no-wait`.
 
 Show the address and code once, exactly as printed, and say that they work for five minutes. Do not change the
 address. Run one login at a time, and never start another on your own:
