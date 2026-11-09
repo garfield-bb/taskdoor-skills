@@ -42,8 +42,9 @@ is stopped early never saves the approval.
   When it ends with `LOGIN_PENDING`, the code still works: run `taskdoor login --resume` again, and never start a
   new login for it. `LOGIN_BUSY` means another `--resume` is already waiting. An older taskdoor refuses `--no-wait`.
 
-Show the address and code once, exactly as printed, and say that they work for five minutes. Do not change the
-address. Run one login at a time, and never start another on your own:
+Show the address and code once, exactly as printed, and say how long they work: the browser sign-in address five
+minutes, the device address and code fifteen minutes (taskdoor prints the exact time). Do not change the address.
+Run one login at a time, and never start another on your own:
 
 - Login stopped with `expired_token`, `access_denied` or `LOGIN_CANCELLED`: nothing was saved. Tell the person,
   ask whether they are ready, and only then start exactly one new login. Say that it shows a new code and that
